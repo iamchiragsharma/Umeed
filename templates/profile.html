@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+    <style>
+    .btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
+    .btn-labeled {padding-top: 0;padding-bottom: 0;}
+    .btn { margin-bottom:10px; }
+    </style>
+</head>
+
+
+<div class="container">
+  <div class="jumbotron">
+    <center><h1 style="font-size:80px;">Suspect's Profile </h1></center>     
+    </div>     
+</div>
+
+<center>
+<div class="card mb-6 border-danger" style="max-width: 650px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src={{ user_profile['profile_photo'] }} class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><b>{{ user_profile['name'] }}</b></h5>
+        <a type="button" target="_blank" href="https://twitter.com/{{user_profile['username']}}" class="btn btn-labeled btn-primary">
+        <span class="btn-label" ><i class="fa fa-twitter"></i></span>{{ user_profile['username'] }}
+        </a>
+        <p class="card-text">{{ user_profile['biography'] }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</center>
+
+<div class="container-fluid" style="margin-top:30px;">
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+    <th scope="col">Serial No</th>
+      <th scope="col">Time Stamp</th>
+      <th scope="col">is Retweet</th>
+      <th scope="col">Text</th>
+      <th scope="col">No of replies</th>
+      <th scope="col">No of retweets</th>
+      <th scope="col">No of likes</th>
+      <th scope="col">Sentiment Polarity</th>
+      <th scope="col">Offensive</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for data in user_data%}
+    <tr>
+      <th scope="row"></th>
+      <td>{{ data[0] }}</td>
+      <td>{{ data[1] }}</td>
+      <td>{{ data[2] }}</td>
+      <td>{{ data[3] }}</td>
+      <td>{{ data[4] }}</td>
+      <td>{{ data[5] }}</td>
+      <td>{{ data[6] }}</td>
+      <td>{{ data[7] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
