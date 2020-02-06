@@ -20,7 +20,7 @@
 </div>
 
 <center>
-<div class="card mb-6 border-danger" style="max-width: 650px;">
+<div class="card mb-6 border-danger" style="max-width: 900px;">
   <div class="row no-gutters">
     <div class="col-md-4">
       <img src={{ user_profile['profile_photo'] }} class="card-img" alt="...">
@@ -32,11 +32,27 @@
         <span class="btn-label" ><i class="fa fa-twitter"></i></span>{{ user_profile['username'] }}
         </a>
         <p class="card-text">{{ user_profile['biography'] }}</p>
+        
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary">Likes : {{ user_profile['likes_count']}}</button>
+        <button type="button" class="btn btn-primary">Tweets : {{ user_profile['tweets_count']}}</button>
+        <button type="button" class="btn btn-primary">Followers : {{ user_profile['followers_count']}}</button>
+        <button type="button" class="btn btn-primary">Following : {{ user_profile['following_count']}}</button>
+        </div>
+        <div class="col-md-4 col-offset-4 centered">
+        <form action="{{ url_for('suspectprofiles') }}" method="post" class="form-inline">
+        <button type="submit" href={{ url_for('suspectprofiles') }} class="btn btn-labeled btn-danger">
+        <span class="btn-label" ><i class="fa fa-plus"></i></span>Suspect List
+        </a>
+        </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
 </center>
+
+
 
 <div class="container-fluid" style="margin-top:30px;">
 <table class="table table-bordered table-hover">
@@ -45,7 +61,7 @@
     <th scope="col">Serial No</th>
       <th scope="col">Time Stamp</th>
       <th scope="col">is Retweet</th>
-      <th scope="col">Text</th>
+      <th scope="col"><center>Text</center></th>
       <th scope="col">No of replies</th>
       <th scope="col">No of retweets</th>
       <th scope="col">No of likes</th>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+{% set count = namespace(value=0) %}
+{% for suspect in suspects %}
+
+{% if count.value% 3 == 0  %}
+<div class="container-fluid" style="margin-top:25px;margin-bottom:25px;">
+<div class="row">
+{% endif %}
+<div class="card md-4 border-dark" style="max-width: 450px;margin-right:20px;margin-left:25px;">
+  <div class="row no-gutters">
+    <div class="col-md-6">
+      <img src={{ suspect[2] }} class="card-img" alt="Not Found">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title"><b> {{ suspect[0]}}</b> </h5>
+        <a type="button" target="_blank" href="https://twitter.com/{{suspect[1]}}" class="btn btn-labeled btn-primary" style="margin-bottom:10px;">
+        <span class="btn-label" ><i class="fa fa-twitter"></i></span>{{ suspect[1] }}
+        </a>
+        <div class="btn-group btn-group" role="group" aria-label="Basic example" style="margin-bottom:10px">
+        <button type="button" class="btn btn-danger">Likes : {{ suspect[3]}}</button>
+        <button type="button" class="btn btn-danger">Tweets : {{ suspect[4]}}</button>
+        </div>
+        <div class="btn-group btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-danger">Followers : {{ suspect[5]}}</button>
+        <button type="button" class="btn btn-danger">Following : {{ suspect[6]}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% set count.value = count.value + 1 %}
+{% endfor %}
+{% if count.value% 3 == 0  %}
+</div>
+</div>
+{% endif %}
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

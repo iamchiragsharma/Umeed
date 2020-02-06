@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+    <th scope="col">Serial No</th>
+      <th scope="col">Time</th>
+      <th scope="col">Profile Image</th>
+      <th scope="col">Username</th>
+      <th scope="col">Followers Count</th>
+      <th scope="col">Following Count</th>
+      <th scope="col">Reply To</th>
+      <th scope="col">Text</th>
+      <th scope="col">Likes</th>
+      <th scope="col">Retweets</th>
+      <th scope="col">Polarity</th>
+      <th scope="col">Hate</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for data in hashtag_data%}
+    <tr>
+      <th scope="row"></th>
+      <td>{{ data[0] }}</td>
+      <td><img src={{ data[1] }} class="card-img" alt="Not Found" width="42" height="42"></td>
+      <td><a href={{ url_for('hashtag_profile', twitter_id = data[2])}} target="_blank">{{ data[2] }}</a></td>
+      <td>{{ data[3] }}</td>
+      <td>{{ data[4] }}</td>
+      <td>{{ data[5] }}</td>
+      <td>{{ data[6] }}</td>
+      <td>{{ data[7] }}</td>
+      <td>{{ data[8] }}</td>
+      <td>{{ data[9] }}</td>
+      <td>{{ data[10] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
