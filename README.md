@@ -6,9 +6,11 @@
 - [x] Development of WebApp and real time front page state wise monitoring
 - [x] Child Predator Identification from Chat
 - [x] Development of Profile Analysis
-- [ ] Creation of Suspect List and it's Monitoring
-- [ ] Addition of Interactive Graphs for Profile Analysis 
-- [ ] Development of Hashtag Analysis
-- [ ] Development of Voilence Detection
-- [ ] Development of Nudity Detection
+- [x] Creation of Suspect List and it's Monitoring
+- [x] Hashtag Analysis and Addition of Suspect List Redirection to Hashtag Found Profiles
+- [x] Development of Voilence Detection
+- [x] Development of Nudity Detection
+- [x] Integration of Nudity Detection
+- [ ] Integration of Voilence Detection
 - [ ] Development of Architecture to identify hate speech in hinglish
+- [ ] Addition of Interactive Graphs for Profile Analysis 

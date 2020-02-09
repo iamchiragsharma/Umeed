@@ -46,6 +46,11 @@
         </a>
         </form>
         </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-danger">Sexual Content/Predatory Posts : 2</button>
+        <button type="button" class="btn btn-danger">HateSpeech/Voilence : 3</button>
+        <button type="button" class="btn btn-danger">Harassment / Bullying : 1</button>
+        </div>
       </div>
     </div>
   </div>
@@ -74,14 +79,14 @@
     {% for data in user_data%}
     <tr>
       <th scope="row"></th>
-      <td>{{ data[0] }}</td>
       <td>{{ data[1] }}</td>
       <td>{{ data[2] }}</td>
-      <td>{{ data[3] }}</td>
+      <td><a href= {{ url_for('tweet_profile',tweet_id = data[0]) }} target="_blank">{{ data[3] }}</a></td>
       <td>{{ data[4] }}</td>
       <td>{{ data[5] }}</td>
       <td>{{ data[6] }}</td>
       <td>{{ data[7] }}</td>
+      <td>{{ data[8] }}</td>
     </tr>
     {% endfor %}
 </table>
