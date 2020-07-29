@@ -11,6 +11,6 @@
 - [x] Development of Voilence Detection
 - [x] Development of Nudity Detection
 - [x] Integration of Nudity Detection
-- [ ] Integration of Voilence Detection
-- [ ] Development of Architecture to identify hate speech in hinglish
-- [ ] Addition of Interactive Graphs for Profile Analysis 
+- [x] Integration of Voilence Detection
+- [x] Development of Architecture to identify hate speech in hinglish
+- [x] Addition of Interactive Graphs for Profile Analysis 
